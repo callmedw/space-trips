@@ -1,12 +1,12 @@
 <div class="jumbotron">
-  <h1>Mario's</h1>
-  <h4>some things about Mario's business</h4>
+  <h1>Space Trips</h1>
+  <h4>shoot for the moon and let your next vacation be out of this world</h4>
 </div>
 
 <div class="row">
   <div class="col-md-8">
-    <h3>All Products</h3>
-    <p><%= link_to "Add a New Product", new_product_path %></p>
+    <h3>All Trips</h3>
+    <p><%= link_to "Add a New Trip", new_product_path %></p>
     <ul class="all_products">
       <% @products.each do |product| %>
         <li><%= link_to product.name, product_path(product)%>, <%= product.cost %></li>
