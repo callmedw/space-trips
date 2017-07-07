@@ -15,4 +15,30 @@
 
 body {
   background-color: #cbdeed;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+p {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.form_submit_button {
+  outline-width: medium;
+  outline-color: inherit;
+  width: 250px;
+  margin: auto;
+}
+
+.form_container {
+  width: 1200px;
+  margin: auto;
+  padding: auto;
 }

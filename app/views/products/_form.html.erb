@@ -1,22 +1,49 @@
+<br>
 <%= render "layouts/errors", :object => @product %>
-
-<%= form_for @product do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :cost %>
-  <%= f.text_field :cost %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :image %>
-  <%= f.text_field :image %>
-  <%= f.label :star %>
-  <%= f.text_field :star %>
-  <%= f.label :agency %>
-  <%= f.text_field :agency %>
-  <%= f.label :craft %>
-  <%= f.text_field :craft %>
-  <%= f.label :distance %>
-  <%= f.text_field :distance %>
-
-  <%= f.submit %>
-<% end %>
+<br>
+<div class="form_container">
+  <%= form_for @product do |f| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :cost %>
+      <%= f.text_field :cost %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :craft %>
+      <%= f.text_field :craft %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :star %>
+      <%= f.text_field :star %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :agency %>
+      <%= f.text_field :agency %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :distance %>
+      <%= f.text_field :distance %>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="form_submit_button">
+    <%= f.submit %>
+  </div>
+  <% end %>
+</div>

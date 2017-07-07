@@ -15,7 +15,6 @@
 <hr>
 <h3>What others have said about this trip:</h3>
 <% if @product.reviews.any? %>
-  <h4>Here are the reviews for this trip:</h4>
   <ul>
     <% @product.reviews.each do |review| %>
     <p>Reviewed by: <%= review.author %></p>
