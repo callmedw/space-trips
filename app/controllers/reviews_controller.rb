@@ -3,6 +3,11 @@ class ReviewsController < ApplicationController
 
   def secret
   end
+  
+
+  def user_emal
+    user.email if user
+  end
 
   def new
     @product = Product.find(params[:product_id])
