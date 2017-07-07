@@ -1,0 +1,28 @@
+<h2><%= @product.name %></h2>
+<%= image_tag("#{@product.image}") %>
+<p><%= @product.cost %></p>
+<p><%= @product.description %></p>
+
+<hr>
+<p><%= link_to "Edit This Product", edit_product_path(@product) %></p>
+<p><%= link_to "Remove this product", product_path(@product),
+                          :data => {
+                          :confirm => "You sure?",
+                          :method => "delete"} %></p>
+
+<p><%= link_to "Review this product", new_product_review_path(@product) %></p>
+<hr>
+<h3>What others have said about this product:</h3>
+<% if @product.reviews.any? %>
+  <h4>Here are the reviews for this product:</h4>
+  <ul>
+    <% @product.reviews.each do |review| %>
+    <p>Reviewed by: <%= review.author %></p>
+    <p>Rating: <%= review.rating %></p>
+    <p><%= review.content %></p>
+    <br>
+    <%end%>
+  </ul>
+<% else %>
+  <p>This product hasn't been reviewed yet</p>
+<% end %>
