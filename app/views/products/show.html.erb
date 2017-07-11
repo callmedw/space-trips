@@ -26,11 +26,3 @@
 <% else %>
   <p>This trip hasn't been reviewed yet</p>
 <% end %>
-
-<% if user_signed_in? && current_user == @review.user %>
-  <%= link_to "Edit", edit_review_path(@review) %>
-  <%= link_to "Delete",
-  review_path(@review),
-  method: :delete,
-  data: {confirm: "Are you sure?"} %>
-  <% end %>

@@ -1,9 +1,5 @@
 class ProductsController < ApplicationController
-
-  before_action :authorize, only: [:new, :create, :edit, :destroy]
-
-  def secret
-  end
+  before_action :admin_authorize, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @products = Product.all
@@ -51,8 +47,7 @@ class ProductsController < ApplicationController
 
 
 private
-def product_params
-  params.require(:product).permit(:name, :cost, :image, :description, :star, :agency, :craft, :distance)
-end
-
+  def product_params
+    params.require(:product).permit(:name, :cost, :image, :description, :star, :agency, :craft, :distance)
+  end
 end
