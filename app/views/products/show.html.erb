@@ -4,24 +4,34 @@
 <p>Travel <%= @product.distance %> in the luxurious <%= @product.craft %> with the esteemed <%= @product.agency %> to the lovely <%= @product.name %>.</p>
 <p> You'll see unbelievable sights like <%= @product.description %>! You'll want to bring a camera to capture a selfie near <%= @product.star %>. This is good old fashioned family fun, but in space!
 
-<hr>
-<p><%= link_to "Edit This Trip", edit_product_path(@product) %></p>
-<p><%= link_to "Remove this Trip", product_path(@product),
-                          :data => {
-                          :confirm => "You sure?",
-                          :method => "delete"} %></p>
+<% if current_user && current_user.admin == true %>
+  <p><%= link_to "Edit This Trip", edit_product_path(@product) %></p>
+  <p><%= link_to "Remove this Trip", product_path(@product),
+                            :data => {
+                            :confirm => "You sure?",
+                            :method => "delete"} %></p>
+<% end %>
 
-<p><%= link_to "Review this Trip", new_product_review_path(@product) %></p>
-<hr>
 <h3>What others have said about this trip:</h3>
+<% if current_user == current_user %>
+  <p><%= link_to "Review this Trip", new_product_review_path(@product) %></p>
+<% end %>
 <% if @product.reviews.any? %>
   <ul>
     <% @product.reviews.each do |review| %>
     <p>Reviewed by: <%= review.author %></p>
     <p>Rating: <%= review.rating %></p>
     <p><%= review.content %></p>
+    <% if current_user.id == review.user_id  %>
+      <%= link_to "Edit Review", edit_product_review_path(@product, review) %>
+    <% end %>
+    <% if current_user == review.user_id || current_user.admin == true %>
+      <%= link_to "Delete Review", product_review_path(@product, review),
+      :data => {:confirm => "Are you sure?",
+      :method => "delete"} %>
+    <% end %>
     <br>
-    <%end%>
+  <%end%>
   </ul>
 <% else %>
   <p>This trip hasn't been reviewed yet</p>

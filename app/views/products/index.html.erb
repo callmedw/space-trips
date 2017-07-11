@@ -6,13 +6,13 @@
 <div class="row">
   <div class="col-md-8">
     <h3>All Trips</h3>
-    <p><%= link_to "Add a New Trip", new_product_path %></p>
+    <% if current_user && current_user.admin == true %>
+      <p><%= link_to "Add a New Trip", new_product_path %></p>
+    <% end %>
     <ul class="all_products">
       <% @products.each do |product| %>
         <li><%= link_to product.name, product_path(product)%>, <%= product.cost %></li>
       <% end %>
     </ul>
   </div>
-
-
-  </div>
+</div>
