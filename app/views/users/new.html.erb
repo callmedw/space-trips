@@ -2,7 +2,7 @@
 <%= render "layouts/errors", :object => @user %>
 <%= form_for @user do |f| %>
   <%= f.label "Email" %>
-  <%= f.text_field :email %>
+  <%= f.email_field :email, id: "email" %>
   <%= f.label "Password" %>
   <%= f.password_field :password %>
   <%= f.label :password_confirmation %>

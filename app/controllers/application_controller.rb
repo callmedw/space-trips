@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     if !current_user
-      flash[:alert] = "You aren't authorized to visit that page."
+      flash[:alert] = "Please sign in (or up) to visit that page."
       redirect_to '/'
     end
   end
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def admin_authorize
     if !current_user || current_user.admin == false
-      flash[:alert] = "You aren't authorized to visit that page."
+      flash[:alert] = "Only administrators can visit that page."
       redirect_to '/'
     end
   end
