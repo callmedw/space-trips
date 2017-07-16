@@ -17,11 +17,4 @@ FactoryGirl.define do
     craft('Shenzhou spacecraft')
     distance('very far')
   end
-
-  factory :review do
-    author('test@test.com')
-    content('great stuff right here yup')
-    rating '5'
-    product_id 1
-  end
 end
