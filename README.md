@@ -55,6 +55,10 @@ $ rails s
 ```
 9. Navigate to localhost:3000 in a web browser of your choice
 
+10. Log in with these admin credentials:
+email: admin@admin.com
+password: administrator
+
 ## Known Bugs
 *
 
