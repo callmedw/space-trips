@@ -10,3 +10,5 @@ describe 'regular user sign up/in/out' do
     click_button 'Sign Up'
   end
 end
+
+# not allowing sign up but not throwing errors for any of the fill ins so im not sure whats going on here
